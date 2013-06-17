@@ -1,0 +1,13 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\drawer.o
+./release\clearbutton.o
+./release\addbutton.o
+./release\preview.o
+./release\moc_mainwindow.o
+./release\moc_drawer.o
+./release\moc_clearbutton.o
+./release\moc_addbutton.o
+./release\moc_preview.o
+);

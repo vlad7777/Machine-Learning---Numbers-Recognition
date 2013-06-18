@@ -10,12 +10,10 @@ MainWindow::MainWindow(QWidget *parent) :
     drawer->setFixedSize(300, 300);
 
     preview = new Preview(this);
-    ClearButton *cButton = new ClearButton(this, drawer);
+    cButton = new ClearButton(this, drawer);
     QPushButton *showPreview = new QPushButton("Show Preview", this);
-    AddButton *add = new AddButton(this, drawer);
+    add = new AddButton(this, drawer);
     add->setFixedSize(300, 50);
-
-
 
     connect(showPreview, SIGNAL(clicked()), this, SLOT(showPreview()));
 
@@ -36,7 +34,12 @@ void MainWindow::showPreview()
     preview->drawMap(drawer->getSimplifiedPic(20, 20, 16));
 }
 
-void MainWindow::AddClicked()
+void MainWindow::keyPressEvent(QKeyEvent *e)
 {
-
+    if (e->key() == Qt::Key_Return)
+    {
+        this->showPreview();
+        add->AddClicked();
+        cButton->ClearClicked();
+    }
 }

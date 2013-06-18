@@ -5,6 +5,7 @@
 #include <QBoxLayout>
 #include <QPushButton>
 #include <QLineEdit>
+#include <QKeyEvent>
 
 #include <drawer.h>
 #include <clearbutton.h>
@@ -21,12 +22,16 @@ private:
     Drawer *drawer;
     Preview *preview;
     QLineEdit *edit;
-    
+    ClearButton *cButton;
+    AddButton *add;
+
 signals:
     
 public slots:
     void showPreview();
-    void AddClicked();
+
+protected:
+    void keyPressEvent(QKeyEvent *e);
 };
 
 #endif // MAINWINDOW_H
